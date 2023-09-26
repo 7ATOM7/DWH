@@ -73,3 +73,14 @@ dm_sales_user
        'company_bs', 'latitude_y', 'longitude_y']
 
 Contains data mart tables designed specifically for reporting purposes. It's intended to serve Metabase reporting needs, based on processed data from the Foundation layer.
+
+
+Additional scope:-
+1. In foundation layer, add scd-2 for customer information, upserts for sales data based on data volume and veracity.
+2. If it's reasaonable add surrogate keys for dimensions , for faster joins. and histoty tracking
+3. Add proper error handling for all of the etl operations.
+4. Create seperate, aggregated tables for different reporting requirements. 
+5. Schedules the jobs for the current scope using chron to start with, employ different tools like nifi or airflow upon expansion
+6. Since the integration and data transformation are de-coupled, we can opt for lake storage in cloud or data center and we can deploy other execution engines like Tez, Spark, Mapreduce etc to scale 
+7. Create a seperate analytical database for increased reporting requirements.
+8. Tried to implement , maps based visual for UAE using GEOJson, but some rendering issue.
