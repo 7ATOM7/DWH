@@ -83,4 +83,5 @@ Additional scope:-
 5. Schedules the jobs for the current scope using chron to start with, employ different tools like nifi or airflow upon expansion. Currently unscheduled to prevent api calls. Logs are written to Logs folder for each day.
 6. Since the integration and data transformation are de-coupled, we can opt for lake storage in cloud or data center and we can deploy other execution engines like Tez, Spark, Mapreduce etc to scale 
 7. Create a seperate analytical database for increased reporting requirements.
-8. Tried to implement , maps based visual for UAE using GEOJson, but some rendering issue.
+8. Create templates for different types of jobs, for integration, for multiple types of transformations(scd-2, upserts, truncate, error handling, job retries, standard logging).. etc
+9. Tried to implement , maps based visual for UAE using GEOJson, but some rendering issue.
