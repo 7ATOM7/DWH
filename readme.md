@@ -3,6 +3,8 @@ Project Documentation
 Note:- Dashbard created on metabase cannot be transferred via the github due to the volume being managed. Its doable but cumbersome , refer the images in the folder for visualizations.
 Sales data doesnt have timestamp value only date. we added the random timestamp value to make the visuals more engaging with the weather data.
 We also added the coordinates of Abu Dhabi, Sharjah and Dubai randomly to all the sales information to make the data region specific and since the same wasnt provided.
+Script will pull the data from different sources, create the different schema in the database write to them as well
+
 
 Running the Platform
 To run the platform, simply navigate to the project's root directory and use the following command:
