@@ -80,7 +80,7 @@ Additional scope:-
 2. If it's reasaonable add surrogate keys for dimensions , for faster joins. and histoty tracking
 3. Add proper error handling for all of the etl operations.
 4. Create seperate, aggregated tables for different reporting requirements. 
-5. Schedules the jobs for the current scope using chron to start with, employ different tools like nifi or airflow upon expansion
+5. Schedules the jobs for the current scope using chron to start with, employ different tools like nifi or airflow upon expansion. Currently unscheduled to prevent api calls. Logs are written to Logs folder for each day.
 6. Since the integration and data transformation are de-coupled, we can opt for lake storage in cloud or data center and we can deploy other execution engines like Tez, Spark, Mapreduce etc to scale 
 7. Create a seperate analytical database for increased reporting requirements.
 8. Tried to implement , maps based visual for UAE using GEOJson, but some rendering issue.
