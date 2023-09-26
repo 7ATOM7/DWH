@@ -1,0 +1,13 @@
+# For making HTTP requests
+requests==2.26.0
+
+# For PostgreSQL database connection
+psycopg2==2.9.1
+psycopg2-binary==2.9.1
+
+# For data manipulation and analysis
+pandas==2.1.1
+
+sqlalchemy==2.0.21
+
+

@@ -1,0 +1,43 @@
+import psycopg2
+
+# Database connection parameters - replace with your values
+DB_NAME = 'your_db_name'
+DB_USER = 'your_db_user'
+DB_PASS = 'your_db_password'
+DB_HOST = 'localhost'  # or the IP if the database is on another machine/container
+DB_PORT = '5432'  # default PostgreSQL port
+
+# Connect to the PostgreSQL database
+conn = psycopg2.connect(database=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT)
+cursor = conn.cursor()
+
+# Define the CREATE TABLE statement
+create_table_query = '''
+CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    username VARCHAR(255),
+    email VARCHAR(255),
+    phone VARCHAR(255),
+    website VARCHAR(255),
+    street VARCHAR(255),
+    suite VARCHAR(255),
+    city VARCHAR(255),
+    zipcode VARCHAR(255),
+    lat REAL,
+    lng REAL,
+    company_name VARCHAR(255),
+    company_catchPhrase TEXT,
+    company_bs TEXT
+);
+'''
+
+# Execute the statement
+cursor.execute(create_table_query)
+
+# Commit the transaction
+conn.commit()
+
+# Close the database connection
+cursor.close()
+conn.close()

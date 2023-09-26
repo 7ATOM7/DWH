@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: analytical_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  python-etl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./ETL:/DWH/ETL
+      - ./Scripts:/DWH/Scripts  
+      - ./Logs:/DWH/Logs
+      - ./Meta:/DWH/Meta
+      - ./Data:/DWH/Data
+
+  metabase:
+    image: metabase/metabase:latest
+    depends_on:
+      - postgres
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: analytical_db
+      MB_DB_PORT: 5432
+      MB_DB_USER: username
+      MB_DB_PASS: password
+      MB_DB_HOST: postgres
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:

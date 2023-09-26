@@ -1,0 +1,2 @@
+/DWH/Scripts/ETL_script.py:44: FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+  users_df=pd.read_json(response.text)
